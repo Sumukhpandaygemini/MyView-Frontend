@@ -11,8 +11,15 @@ import { Component ,HostListener} from '@angular/core';
 export class HeaderComponent {
   isDropdownOpen = false;
 
-  toggleDropdown() {
+  toggleDropdown(event: MouseEvent) {
+    event.stopPropagation(); // Prevent click event from propagating to the document
     this.isDropdownOpen = !this.isDropdownOpen;
+  }
+  ngOnInit() {
+    document.addEventListener('click', () => this.closeDropdown());
+  }
+  ngOnDestroy() {
+    document.removeEventListener('click', () => this.closeDropdown());
   }
 
   onProfileClick() {

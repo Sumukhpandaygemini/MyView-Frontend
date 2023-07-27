@@ -17,6 +17,32 @@ html{
 
 }
 
+
+/* Add a higher z-index to ensure the dropdown appears above other content */
+.dropdown {
+    position: relative;
+    z-index: 999;
+  }
+  
+  /* Prevent the dropdown from closing when clicking on the icon */
+  .nav-link {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  
+  /* You might need to adjust the positioning of the dropdown menu to fit your layout */
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+  }
+  
+  .show .dropdown-menu {
+    display: block;
+  }
+  
+
 .searchBar{
     border: 1px solid rgba(199, 192, 192, 0.744);
 }
